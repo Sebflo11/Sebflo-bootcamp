@@ -40,6 +40,7 @@ export const App = () => {
             <div>
                 <h1>Greetings</h1>
                 <Hello2 name="Maya" age={26 + 10} />
+                <hr></hr>
                 <Hello2 name={name} age={age} />
             </div>
         </>
