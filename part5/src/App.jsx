@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const Header = (props) => {
     return (
         <h1>{props.course.name}</h1>
@@ -49,12 +51,20 @@ export const App = () => {
           }
         ]
     }
+
+    const [counter, setCounter] = useState(0)
    
     return (
         <>
             <Header course={course}/>
             <Content course={course}/>
             <Total course={course}/>
+
+            <div>
+                <button onClick={() => setCounter(counter + 1)}>Push</button>
+                <button onClick={() => setCounter(0)}>Reset</button>
+                <h1>{counter}</h1>
+            </div>
         </>
     )
 }
