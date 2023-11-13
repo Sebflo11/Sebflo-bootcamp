@@ -41,14 +41,6 @@ const Statistics = ({good, neutral, bad}) => {
     )
 }
 
-const Anecdotes = (props) => {
-    return (
-        <div>
-            {props.anecdotes}
-        </div>
-    )
-}
-
 export const App = () => {
     // save clicks of each button to its own state
     const [good, setGood] = useState(0)
@@ -58,15 +50,7 @@ export const App = () => {
 
     const increment = (status, setStatus) => () => setStatus(status + 1) 
 
-    const anecdotes = [
-        'If it hurts, do it more often',
-        'Adding manpower to a late software project makes it later!',
-        'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
-        'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
-        'Premature optimization is the root of all evil.',
-        'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
-      ]
-    
+
     return (
         <div>
             <h1>give feedback</h1>
@@ -74,8 +58,6 @@ export const App = () => {
             <Button onClick={increment(neutral, setNeutral)} text={'neutral'} />
             <Button onClick={increment(bad, setBad)} text={'bad'} />
             <Statistics good={good} neutral={neutral} bad={bad} />
-            <Button onClick={increment(selected, setSelected)} text={'anectodes'}/>
-            <Anecdotes anecdotes={anecdotes[selected]} />
         </div>
     )
 }
